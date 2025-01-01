@@ -1,0 +1,51 @@
+import os
+import sys
+
+def DirectoryRename(DirName,Extension,Nextension):
+
+    flag = os.path.isabs(DirName)
+
+    if flag == False:
+        DirName = os.path.abspath(DirName)
+
+    exist = os.path.isdir(DirName)
+
+    if exist == True:
+        for foldername,subfoldername,filename in os.walk(DirName):
+            for name in filename:
+                if name.endswith(Extension):
+                    old_file,old_extension = os.path.splitext(os.path.join(foldername,name))
+                    new_name = old_file+Nextension
+
+                    try:
+                        os.rename(os.path.join(foldername,name),new_name)
+                        print("Changed file with name : ",new_name)
+                    except Exception as eobj:
+                        print("Could not rename due to : ",eobj)
+
+    else:
+        print("No such directory")
+
+def main():
+    if len(sys.argv)==4:
+        if sys.argv[1] == "--h" or sys.argv[1] == "--H":
+            print("The script is used to search file with given extention in directory")
+            exit()
+
+        if sys.argv[1] == "--u" or sys.argv[1] == "--U":
+            print("Usage of script : ")
+            print("Name_Of_File Name_Of_Directory old_extention new_extension")
+            exit()
+
+        try:
+            DirectoryRename(sys.argv[1],sys.argv[2],sys.argv[3])
+        except Exception as eobj:
+            print("Unable to do the task due to : ",eobj)
+
+    else:
+        print("Invalid option")
+        print("Use --h to get help and use --u to get usage of application")
+        exit()
+
+if __name__ == "__main__":
+    main()

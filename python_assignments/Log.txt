@@ -1,0 +1,10 @@
+--------------------------------------------------------------------------------
+Marvellous Process Log file to detect duplcates files 
+Log file created at : Tue Jun  4 19:01:10 2024
+--------------------------------------------------------------------------------
+/home/arjun/Desktop/python/python_assignments/Marvellous/program10.js 
+/home/arjun/Desktop/python/python_assignments/Marvellous/program10.ts 
+/home/arjun/Desktop/python/python_assignments/Marvellous/program8.ts 
+/home/arjun/Desktop/python/python_assignments/Marvellous/program9.ts 
+/home/arjun/Desktop/python/python_assignments/Marvellous/program9.js 
+--------------------------------------------------------------------------------
